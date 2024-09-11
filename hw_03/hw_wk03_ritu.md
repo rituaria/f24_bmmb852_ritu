@@ -21,4 +21,6 @@ GCF_000346465.2 refers to the reference genome of *Prunus persica*, common name 
     mdir -p hw_wk03_ritu
     cd hw_wk03_ritu
     micromamba activate bioinfo
+    datasets download genome accession GCF_000346465.2
+    unzip ncbi_dataset.zip
 ```
