@@ -5,6 +5,10 @@
 ### Using a resource of your choice, download the genome and annotation files for an organism of your choice.(We recommend a smaller genome to make things go faster and to look at a simpler GFF file)
 GCF_000346465.2 refers to the reference genome of *Prunus persica*, common name peach.
 
+https://plants.ensembl.org/Prunus_persica/Info/Index
+https://www.ebi.ac.uk/ena/browser/view/GCA_000346465.2
+https://www.ncbi.nlm.nih.gov/datasets/taxonomy/3760/ 
+
 #### Use IGV to visualize the annotations relative to the genome.
 
 #### Separate intervals of type "gene" into a different file. If you don't have genes, pick another feature.
