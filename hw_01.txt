@@ -1,0 +1,27 @@
+Lecture 1:
+
+    Set up your computer. -done-
+    Follow the installation instructions. -done-
+    How can you tell that you were successful?  use doctor.py
+    Can you run the samtools program? yes
+    What version is your samtools program? version 1.20
+    Share the link to your GitHub repository that you have set up. 
+    https://github.com/rituaria/f24_bmmb852_ritu
+
+Lecture 2:
+
+    Describe a Unix command not discussed in the class or the book. Try to find something that might be useful. When would you use that command? nl is a command numbers lines of text in output. I tried it with ex: cat "filename.txt" | nl to get the text in that file numbered. it may be useful if you want to add that information to any file for human readability or distinguish line breaks in a weird esoteric way for some reason. 
+    Describe a customization for the command you chose above (describe the effect of a flag/parameter). nl -v# "filename.txt" will start the line numbering at whatever number # was designated
+    What flags will make the ls command write out the files sizes in “human-friendly” mode? ls -lh or -l -h
+    What flag will make the rm command ask for permission when removing a file? rm -i
+    Create a nested directory structure. Create files in various directories. 
+    mkdir -p nesttest/nest2/nest3/nest4
+    touch test.txt nest2/test2.txt nest2/nest3/test3.txt nest2/nest3/nest4/test4.txt
+    List the absolute and relative path to a file.
+    absolute: /home/rsv5094/bmmb852/nesttest/nest2/nest3/nest4/test4.txt
+    relative from bmmb852: /nesttest/nest2/nest3/nest4/test4.txt
+    Demonstrate path shortcuts using the home directory, current directory, and parent directory.
+    home: ~
+    current: .
+    parent: ..
+
