@@ -1,0 +1,104 @@
+#Assignment Questions (commands for full process below)
+Select an organism and download its corresponding GFF file. done
+
+Investigate this file with command line UNIX tools. done
+
+Find answers to the following questions:
+
+    Tell us a bit about the organism. 
+    Athene cunicularia is also known as the burrowing owl, taxon ID 194338. 
+    Some information about the annotation built:
+    $ cat Athene_cunicularia.athCun1.112.gff3 | grep '#' | grep -v '##'
+        #!genome-build  athCun1
+        #!genome-version athCun1
+        #!genome-date 2018-06
+        #!genome-build-accession GCA_003259725.1
+        #!genebuild-last-updated 2019-09
+
+    How many features does the file contain? 693945
+    $ cat feature_types.txt | wc -l
+        693945
+
+    
+    How many sequence regions (chromosomes) does the file contain? 445
+    $ cat Athene_cunicularia.athCun1.112.gff3 | grep '##s'| wc -l
+        445
+
+
+    How many genes are listed for this organism? 13835
+    $ cat feature_types.txt | sort-uniq-count-rank
+    #excerpt of output
+        13835   gene
+    #Incorrect way to answer this: cat feature_types.txt | grep 'gene' | wc -l, greps
+    #Above counts features like "pseudogene" and "ncRNA_gene" as well which should not be included from a biological perspective
+
+
+    What are the top-ten most annotated feature types (column 3) across the genome?
+    $ cat feature_types.txt | sort-uniq-count-rank |head
+        308274  exon
+        299787  CDS
+        22665   mRNA
+        18929   biological_region
+        14322   five_prime_UTR
+        13835   gene
+        13156   three_prime_UTR
+        1153    ncRNA_gene
+        921     lnc_RNA
+        445     region
+
+    Having analyzed this GFF file, does it seem like a complete and well-annotated organism?
+I am unsure what makes a complete and well-annotated organism... There are tools like BUSCO and GenomeQC that can analyze an assembly quality in general or against a reference genome. From my reading this is annotated, sure, but I don't know if well enough to have robust results for further genomic analysis.
+
+Share any other insights you might note.
+Parsing files solely via the terminal or in an automated fashion requires a lot of care into how you grep the specific information you need. Example being the number of genes question, there may be instances where you want to include pseudogenes or figure out what a feature called noncoding RNA genes is. The question you are trying to answer needs to be clear and paired with an understanding that labels and categories are human imposed, biology is complex. It is helpful to understand the parameters and information provided in the file you are working with.
+
+Create a text file that shows both how you downloaded the data and how you generated each of your results. done, see below
+
+Commit the file to your GitHub repository that you created for this course. 
+
+
+
+
+
+# Assignment process, with mistakes/extra process steps that are # "commented out" and explained
+# Make a new directory for the homework
+mkdir hw_wk02
+
+
+#Selected Athene cunicularia or the Burrowing Owl
+#Download GFF3 file from Ensembl server 
+#wget http://ftp.ensembl.org/pub/current_gff3/athene_cunicularia/Athene_cunicularia.athCun1.112.abinitio.gff3.gz
+#Unzip file
+#gunzip Athene_cunicularia.athCun1.112.abinitio.gff3.gz
+#Started parsing file to look at features information
+#cat Athene_cunicularia.athCun1.112.abinitio.gff3 | cut -f 3 |sort-uniq-count
+#Realized I downloaded the abinitio file which is incorrect and shows only mRNA and exon features
+
+#Downloading again, the correct one this time
+wget http://ftp.ensembl.org/pub/current_gff3/athene_cunicularia/Athene_cunicularia.athCun1.112.gff3.gz
+
+#Unzip file
+gunzip Athene_cunicularia.athCun1.112.gff3.gz
+
+#Test parsing again for features, sorting and using more to only see some at a time to not get all the "##sequence-region"
+#cat Athene_cunicularia.athCun1.112.gff3 | cut -f 3 | sort-uniq-count-rank | more
+#man grep to figure out how to not include lines starting with # or ##
+
+#Make a file with all of column 3 that is relevant (aka no commented or metadata lines)
+cat Athene_cunicularia.athCun1.112.gff3 | cut -f 3 | grep -v '#' > feature_types.txt
+
+#Find some GFF file info
+cat Athene_cunicularia.athCun1.112.gff3 | grep '#' | grep -v '##'
+
+#Count number of features
+cat feature_types.txt | wc -l
+
+#Count number of sequence regions
+cat Athene_cunicularia.athCun1.112.gff3 | grep '##s'| wc -l
+
+#Count number of genes listed 
+#Incorrect way: cat feature_types.txt | grep 'gene' | wc -l, greps and counts features like "pseudogene" as well
+cat feature_types.txt | sort-uniq-count-rank
+
+#Get top 10 feature types
+cat feature_types.txt | sort-uniq-count-rank |head
