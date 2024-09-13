@@ -1,0 +1,9 @@
+#SEQID	SOURCE	FEATURE	START	END	SCORE	PHASE	ATTRIBUTES
+NC_034009.1	.	gene	24600000	24800000	.	+	.	ID=fakegene01;Name=FakeGene
+NC_034009.1	.	mRNA	24602000	24780000	.	+	.	ID=fakemRNA1;Parent=fakegene01;Name=FakeGene.1
+NC_034009.1	.	mRNA	24609000	24780000	.	+	.	ID=fakemRNA2;Parent=fakegene01;Name=FakeGene.2
+NC_034009.1	.	exon	24602000	24607000	.	+	.	ID=exon1;Parent=fakemRNA1
+NC_034009.1	.	exon	24609000	24615000	.	+	.	ID=exon2;Parent=fakemRNA1,fakemRNA2
+NC_034009.1	.	exon	24680000	24780000	.	+	.	ID=exon3;Parent=fakemRNA1,fakemRNA2
+NC_034009.1	.	cds	24602000	24780000	.	+	.	ID=cds1;Parent=fakemRNA1;Name=FakeGeneProt1
+NC_034009.1	.	cds	24609000	24780000	.	+	.	ID=cds2;Parent=fakemRNA2;Name=FakeGeneProt2
