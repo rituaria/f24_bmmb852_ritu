@@ -3,10 +3,9 @@
 ## Visualize the GFF file of your choice.
 
 ### Using a resource of your choice, download the genome and annotation files for an organism of your choice.(We recommend a smaller genome to make things go faster and to look at a simpler GFF file)
+
 GCF_000346465.2 refers to the reference genome of *Prunus persica*, common name peach.
 
-https://plants.ensembl.org/Prunus_persica/Info/Index
-https://www.ebi.ac.uk/ena/browser/view/GCA_000346465.2
 https://www.ncbi.nlm.nih.gov/datasets/taxonomy/3760/ 
 
 #### Use IGV to visualize the annotations relative to the genome.
@@ -51,6 +50,9 @@ prints:
 8       rRNA
 ```
 
+Could not figure out how to set up properly on the WSL Ubuntu partition, so opened IGV on the Windows side, and opened the genomic assembly file "GCF_000346465.2_Prunus_persica_NCBIv2_genomic.fna" through "Genomes" > "Load Genome from File..."
+
 ```bash
+    #extracting lines annotated as "gene"
     cat genomic.gff | awk '$3 == "gene"' > gene.gff
 ```
