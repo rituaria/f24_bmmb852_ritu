@@ -18,7 +18,7 @@ https://www.ncbi.nlm.nih.gov/datasets/taxonomy/3760/
 
 ### You can attach the screenshots to CANVAS the assignment or even put them into the repository and link them into your markdown report.
 
-All screenshots are included in this markdown file.
+All screenshots are included in this markdown file and also in hw_03_ss/.
 
 ### Your submission needs to list the link to the markdown file in your repository so that reviews can access it.
 
