@@ -4,7 +4,7 @@
 
 ### Using a resource of your choice, download the genome and annotation files for an organism of your choice.(We recommend a smaller genome to make things go faster and to look at a simpler GFF file)
 
-GCF_000346465.2 refers to the reference genome of *Prunus persica*, common name peach. Peaches are a member of the rose family *Rosaceae* and stonefruit genus *Prunus*, and are closely related to almonds *Prunus amygdalus*.
+GCF_000346465.2 refers to the reference genome of *Prunus persica*, common name peach. Peaches are a member of the rose family *Rosaceae* and stonefruit genus *Prunus*, and are closely related to almonds *Prunus amygdalus*. (Source: Royal Horticulture Society, Wikipedia)
 
 https://www.ncbi.nlm.nih.gov/datasets/taxonomy/3760/ 
 
