@@ -28,5 +28,29 @@ https://www.ncbi.nlm.nih.gov/datasets/taxonomy/3760/
     datasets datasets download genome accession GCF_000346465.2 --include gff3,cds,protein,genome
     unzip ncbi_dataset.zip
     cd ncbi_dataset/data/GCF_000346465.2
+    
+    #checking the features in the gff file to determine what to extract
+    cat genomic.gff |cut -f 3 | grep -v '#' | sort-uniq-count-rank
+
+```
+
+prints:
+
+```
+235754  exon
+194725  CDS
+32595   mRNA
+25030   gene
+2102    lnc_RNA
+1519    transcript
+1384    pseudogene
+1077    cDNA_match
+453     tRNA
+192     region
+8       match
+8       rRNA
+```
+
+```bash
     cat genomic.gff | awk '$3 == "gene"' > gene.gff
 ```
