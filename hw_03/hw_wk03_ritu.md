@@ -75,14 +75,13 @@ Annotation such as what seems like homology-based predictions of genes for the s
 
 ![gene vs mrna info](hw_03_ss/hw_03_3_mrnaproductinfo.PNG)
 
-To manually make a .gff file, I opened used
+To manually make a .gff file:
 
 ```bash
 code hw_03_test.gff
 ```
 
 and input arbitrary values:
-
 
 ```
 #SEQID	SOURCE	FEATURE	START	END	SCORE	PHASE	ATTRIBUTES
