@@ -31,9 +31,7 @@ https://www.ncbi.nlm.nih.gov/datasets/taxonomy/3760/
 
 Opened IGV on the Windows side, and opened the genomic assembly file "GCF_000346465.2_Prunus_persica_NCBIv2_genomic.fna" through "Genomes" > "Load Genome from File...". Then opened the genomic.gff from same filepath in explorer and dragged into window to see the provided annotation track Screenshot of the loaded genome annotation in IGV with all chromosomes. 
 
-Screenshot1:
-![screenshot1 loaded annotation](https://github.com/rituaria/f24_bmmb852_ritu/blob/main/hw_03/hw_03_1_loadedannotation.PNG)
-
+![loaded annotation](hw_03_ss/hw_03_1_loadedannotation.PNG)
 
 Then to check the features in the gff file to determine what to extract I used:
 
@@ -68,17 +66,10 @@ There are plenty of genes listed so extracted them to new file as below, and dra
 
 As I scrolled through the viewer, I found that location of gene data was preserved in the "gene.gff" data file I made. Additionally, tRNA encoding regions were also preserved as under the gene category by this extraction, which is accurate categorization. 
 
-Screenshot2:
-
-
-
-
+![tRNA gene annotation](hw_03_ss/hw_03_2_trnaannotation.PNG)
 
 Annotation such as what seems like homology-based predictions of genes for the same "LOC" were in the mRNA or exon features under "**product**", and not information provided in the gene data. 
 
-Screenshot3:
-
-
-
+![gene vs mrna info](hw_03_ss/hw_03_3_mrnaproductinfo.PNG)
 
 Manually making a GFF file
