@@ -32,6 +32,7 @@ https://www.ncbi.nlm.nih.gov/datasets/taxonomy/3760/
 Opened IGV on the Windows side, and opened the genomic assembly file "GCF_000346465.2_Prunus_persica_NCBIv2_genomic.fna" through "Genomes" > "Load Genome from File...". Then opened the genomic.gff from same filepath in explorer and dragged into window to see the provided annotation track Screenshot of the loaded genome annotation in IGV with all chromosomes. 
 
 Screenshot1:
+![screenshot1 loaded annotation](https://github.com/rituaria/f24_bmmb852_ritu/blob/main/hw_03/hw_03_1_loadedannotation.PNG)
 
 
 Then to check the features in the gff file to determine what to extract I used:
