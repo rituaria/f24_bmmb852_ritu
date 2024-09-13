@@ -4,7 +4,7 @@
 
 ### Using a resource of your choice, download the genome and annotation files for an organism of your choice.(We recommend a smaller genome to make things go faster and to look at a simpler GFF file)
 
-GCF_000346465.2 refers to the reference genome of *Prunus persica*, common name peach.
+GCF_000346465.2 refers to the reference genome of *Prunus persica*, common name peach. Peaches are a member of the rose family *Rosaceae* and stonefruit genus *Prunus*, and are closely related to almonds *Prunus amygdalus*.
 
 https://www.ncbi.nlm.nih.gov/datasets/taxonomy/3760/ 
 
@@ -27,13 +27,21 @@ https://www.ncbi.nlm.nih.gov/datasets/taxonomy/3760/
     datasets datasets download genome accession GCF_000346465.2 --include gff3,cds,protein,genome
     unzip ncbi_dataset.zip
     cd ncbi_dataset/data/GCF_000346465.2
-    
-    #checking the features in the gff file to determine what to extract
+```
+
+Opened IGV on the Windows side, and opened the genomic assembly file "GCF_000346465.2_Prunus_persica_NCBIv2_genomic.fna" through "Genomes" > "Load Genome from File...". Then opened the genomic.gff from same filepath in explorer and dragged into window to see the provided annotation track Screenshot of the loaded genome annotation in IGV with all chromosomes. 
+
+Screenshot1:
+
+
+Then to check the features in the gff file to determine what to extract I used:
+
+```bash    
     cat genomic.gff |cut -f 3 | grep -v '#' | sort-uniq-count-rank
 
 ```
 
-prints:
+which prints:
 
 ```
 235754  exon
@@ -50,11 +58,26 @@ prints:
 8       rRNA
 ```
 
-Could not figure out how to set up properly on the WSL Ubuntu partition, so opened IGV on the Windows side, and opened the genomic assembly file "GCF_000346465.2_Prunus_persica_NCBIv2_genomic.fna" through "Genomes" > "Load Genome from File..."
-
 There are plenty of genes listed so extracted them to new file as below, and dragged and dropped into the genome viewer window.
 
 ```bash
     #extracting lines annotated as "gene"
     cat genomic.gff | awk '$3 == "gene"' > gene.gff
 ```
+
+As I scrolled through the viewer, I found that location of gene data was preserved in the "gene.gff" data file I made. Additionally, tRNA encoding regions were also preserved as under the gene category by this extraction, which is accurate categorization. 
+
+Screenshot2:
+
+
+
+
+
+Annotation such as what seems like homology-based predictions of genes for the same "LOC" were in the mRNA or exon features under "**product**", and not information provided in the gene data. 
+
+Screenshot3:
+
+
+
+
+Manually making a GFF file
