@@ -52,6 +52,8 @@ prints:
 
 Could not figure out how to set up properly on the WSL Ubuntu partition, so opened IGV on the Windows side, and opened the genomic assembly file "GCF_000346465.2_Prunus_persica_NCBIv2_genomic.fna" through "Genomes" > "Load Genome from File..."
 
+There are plenty of genes listed so extracted them to new file as below, and dragged and dropped into the genome viewer window.
+
 ```bash
     #extracting lines annotated as "gene"
     cat genomic.gff | awk '$3 == "gene"' > gene.gff
