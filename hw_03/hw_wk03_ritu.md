@@ -22,9 +22,11 @@ https://www.ncbi.nlm.nih.gov/datasets/taxonomy/3760/
 ### Your submission needs to list the link to the markdown file in your repository so that reviews can access it.
 
 ```bash
-    mdir -p hw_wk03_ritu
-    cd hw_wk03_ritu
+    mdir -p hw_wk03
+    cd hw_wk03
     micromamba activate bioinfo
-    datasets download genome accession GCF_000346465.2
+    datasets datasets download genome accession GCF_000346465.2 --include gff3,cds,protein,genome
     unzip ncbi_dataset.zip
+    cd ncbi_dataset/data/GCF_000346465.2
+    cat genomic.gff | awk '$3 == "gene"' > gene.gff
 ```
