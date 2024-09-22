@@ -1,4 +1,4 @@
-# Exploring a sequence ontology
+# Exploring a sequence ontology: snoRNA
 
 Using the script I made (also in this directory) ncbi_gff_features.sh, the *Prunus dulcis* (almond) feature list shows:
 
@@ -70,6 +70,9 @@ SO:0005837  u14_snorna_primary_transcript
 SO:0005841  methylation_guide_snorna
 ```
 
-This is a list of all gene and sequence ontology terms that have snoRNA in them, and it seems to not be case-sensitive. According to the sequence ontology website (http://www.sequenceontology.org/browser/current_release/term/SO:0000275), the parents of snoRNA are sncRNA and snoRNA_primary_transcript. The children are scaRNA, C_D_box_snoRNA, and H_ACA_box_snoRNA. 
+This is a list of all gene and sequence ontology terms that have snoRNA in them, and it seems to not be case-sensitive. According to the sequence ontology website (http://www.sequenceontology.org/browser/current_release/term/SO:0000275), the parents of snoRNA are sncRNA and snoRNA_primary_transcript. The children are scaRNA, C_D_box_snoRNA, and H_ACA_box_snoRNA. There are some synonyms for snoRNA: INSDC_qualifier:snoRNA, small nucleolar RNA, and INSDC_feature:ncRNA, which I believe are the equivalent terms in other classification systems like the International Nucleotide Sequence Database Collaboration. 
 
-![snoRNA nodes] (hw4_images/SNORNA_NodesGraph.png)
+![snoRNA nodes](hw4_images/SNORNA_NodesGraph.png)
+
+I am familiar with the parent terms, but I don't know the children nodes at all, so I looked into them further. 
+For example, scaRNA is "A ncRNA, specific to the Cajal body, that has been demonstrated to function as a guide RNA in the site-specific synthesis of 2'-O-ribose-methylated nucleotides and pseudouridines in the RNA polymerase II-transcribed U1, U2, U4 and U5 spliceosomal small nuclear RNAs (snRNAs)." Some of these terms become so obscure it is helpful to get a sense of function to be a better bioinformatician. However if your project works on things like these, you probably have the relevant literature at hand!
