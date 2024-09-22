@@ -1,9 +1,11 @@
 set -uex
-
-# You must activate the environment as below without the "#"
+# READ BELOW
+# You must activate the bioinfo environment as below without the initial "#"
 # micromamba activate bioinfo
+# You must have the  NCBI command-line tools downloaded https://www.ncbi.nlm.nih.gov/datasets/docs/v2/reference-docs/command-line/datasets/ 
 
-# The NCBI accession for the desired species ${REFSEQID}
+
+# Input the NCBI accession for the desired species within the quotes
 REFSEQID="GCF_902201215.1"
 
 
