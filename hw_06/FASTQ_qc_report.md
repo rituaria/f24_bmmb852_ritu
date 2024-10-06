@@ -37,9 +37,9 @@ fastqc -o reports reads/SRR916071_1.fastq reads/SRR916071_2.fastq
 ```
 and opening the html files generated shows:
 
-![]()
+![](screenshots/orig_SRR916071_1_fastqc.PNG)
 
-![]()
+![](screenshots/orig_SRR916071_2_fastqc.PNG)
 
 I utilized https://www.bioinformatics.babraham.ac.uk/projects/fastqc/Help/3%20Analysis%20Modules/ to help make some interpretations of the QC. Overall, the distribution doesn't seem to fit the bad quality data examples seen here and in class, so maybe there is something else going on. The two sets of files seem to have different qualities! These should be paired but because they are coming from different ends, maybe the quality of the sequencing for one direction was greatly improved over the other somehow? Some additional observations: 
 
@@ -57,6 +57,6 @@ fastp --cut_right -i reads/SRR916071_1.fastq -o reads/SRR916071_1.trimmed.fastq 
 fastqc -o reports reads/SRR916071_1.trimmed.fastq reads/SRR916071_2.trimmed.fastq
 ```
 
-![]()
+![](screenshots/trimmed_SRR916071_1_fastqc.PNG)
 
 From the original 1000 sampled sequences it kept 465 of them, less than half. Some of them were trimmed to 17 bases in length! The percent GC content is the same as before, still 41. Overall all the flags have gone down to warnings except the Per base sequence content which still shows a high disparity in the first few bases. The number of overrepresented sequences increased a lot too, maybe because the source being checked is even smaller now. 
