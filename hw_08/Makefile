@@ -90,8 +90,7 @@ index:
 
 align: 
 	mkdir -p bamfiles
-	bwa mem ${GENPATH}/*.fna ${R1} ${R2} > bamfiles/sim_alignment.sam
-	cat bamfiles/sim_alignment.sam | samtools sort > bamfiles/sim_alignment.bam
+	bwa mem ${GENPATH}/*.fna ${R1} ${R2} | samtools sort > bamfiles/sim_alignment.bam
 	samtools index bamfiles/sim_alignment.bam
 	bwa mem ${GENPATH}/*.fna reads/${SRR}_1.trimmed.fastq reads/${SRR}_2.trimmed.fastq | samtools sort > bamfiles/srr_alignment.bam
 	samtools index bamfiles/srr_alignment.bam
