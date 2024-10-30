@@ -1,5 +1,11 @@
 # Week 9: Filter a BAM file
 
+## Edits and notes from lecture
+
+For question 3, if you're looking at all alignments, you need to also account for removing the unmapped and munmapped, not just secondary and supplementary (-F 4 -F 8 -F 256 -F 2048). If using the proper_pair section (which I did) you can maybe not worry about it. For selecting the reverse, -f 16 and -F 32. 
+
+
+## Original Assignment Submission Below
 
 1. How many reads did not align with the reference genome?
 
