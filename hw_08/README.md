@@ -1,5 +1,11 @@
 # Week 8: Generate a BAM alignment file
 
+## Edits and notes after lecture
+
+Turns out my coverage for the original dataset was far too low, and the contigs were all really short so in IGV it looked like there was nothing aligning. I should probably switch to a more annotated organism for testing, but increasing coverage in simulation or downloading a larger set of data from the SRR does show more stuff happening. 
+
+
+## Original File Submission
 
 Makefile from hw_07 was used and targets for indexing and aligning added. The ```index``` target indexes the reference genome and ```align``` target pulls the simulated reads and reads from an SRR and aligns with ```bwa mem```. Summary statistics for each bam file (after indexing) are generated. 
 

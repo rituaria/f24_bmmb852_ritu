@@ -1,8 +1,8 @@
 # ID of desired reference genome
-REFSEQID = GCF_000848505.1
+REFSEQID = GCA_000441915.1
 
 # Number of reads to simulate with wgsim
-Nsim = 1000
+Nsim = 10000
 
 # Length of reads to simulate with wgsim
 Lsim = 100
@@ -17,10 +17,10 @@ GENPATH = ncbi_dataset/data/${REFSEQID}
 
 
 # SRR to variable
-SRR = SRR1972739
+SRR = SRR916071
 
 # Sampled number of reads
-Nreads = 100
+Nreads = 10000
 
 # Set cut window size (range is 1-1000, default is 4)
 CutW = 4
